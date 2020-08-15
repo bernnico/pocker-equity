@@ -1,4 +1,4 @@
-#include "funcs.h"
+//#include "funcs.h"
 
 //getRandomCards(uint8_t numbersOfCards, uint64_t cardsInGame) {
 //	uint8_t randomImage, randomSuit;

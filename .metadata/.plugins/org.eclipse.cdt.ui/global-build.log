@@ -1,0 +1,5 @@
+06:50:35 **** Incremental Build of configuration Debug for project poker-equity-cpp ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\bernnico\\eclipse-cpp-workspace\\poker-equity-cpp\\inc" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\funcs.o" "..\\src\\funcs.c" 
+g++ -std=c++17 "-IC:\\Users\\bernnico\\eclipse-cpp-workspace\\poker-equity-cpp\\inc" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\poker-equity-cpp.o" "..\\src\\poker-equity-cpp.cpp" 
+g++ -o poker-equity-cpp.exe "src\\funcs.o" "src\\poker-equity-cpp.o" 

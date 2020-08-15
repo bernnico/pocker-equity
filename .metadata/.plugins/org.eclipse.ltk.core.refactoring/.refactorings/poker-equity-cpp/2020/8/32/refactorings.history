@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;poker-equity-cpp/inc/func.h&apos; to &apos;funcs.h&apos;" description="Rename resource &apos;func.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="inc/func.h" name="funcs.h" stamp="1596860929277" updateReferences="true"/>
+</session>

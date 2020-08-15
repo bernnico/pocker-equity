@@ -1,0 +1,11 @@
+#ifndef FUNC_H_
+#define FUNC_H_
+
+
+uint64_t getRandomCards(uint8_t numbersOfCards = 1, uint64_t cardsInGame = 0L);
+void getPosibleBoards(uint64_t * boards, uint64_t cardsInGame = 0UL);
+
+
+
+
+#endif /* FUNC_H_ */

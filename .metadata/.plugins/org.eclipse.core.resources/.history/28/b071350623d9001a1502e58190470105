@@ -1,0 +1,8 @@
+#include <iostream>
+#include "cardsdef.h"
+using namespace std;
+
+int main() {
+	cout << "!!!Hello World!!!" << hex << CARD_64_A << endl; // prints !!!Hello World!!!
+	return 0;
+}

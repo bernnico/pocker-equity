@@ -1,0 +1,54 @@
+/*
+ * cardsdef.h
+ *
+ *  Created on: 08.08.2020
+ *      Author: bernnico
+ */
+
+#ifndef CARDSDEF_H_
+#define CARDSDEF_H_
+
+#define RANKS				13
+#define SUITS				4
+
+/* Cards as 64-Bits */
+// 64-bit => 0x 0A KQJT 9876 5432
+// LS 4-bit => 0b cdhs
+
+#define CARD64_2							(uint64_t) 0x1
+#define CARD64_A							CARD64_2 << (13 << 2)
+
+#define CARD64_2s							(uint64_t) 0xF
+#define CARD64_As							CARD64_2s << (13 << 2)
+
+#define CARD64_ALL_S_SUIT					(uint64) 0x01 0101 0101 0101 0101 0101 0101
+#define CARD64_ALL_H_SUIT					CARD64_ALL_S_SUIT << 1
+#define CARD64_ALL_D_SUIT					CARD64_ALL_S_SUIT << 2
+#define CARD64_ALL_C_SUIT					CARD64_ALL_S_SUIT << 3
+
+#define CARD64_ALL_2_RANKS					(uint64_t) 0xF
+#define CARD64_ALL_X_RANKS(_CARD)			CARD64_ALL_2_RANKS << (_CARD << 2) // rank 2 := _CARD=0
+
+/* Hand as 32-Bit */
+#define WIN32_PAIR							(uint32_t) 0x0
+#define WIN32_TWO_PAIR						(uint32_t) 0x1
+#define WIN32_THREE_OF_A_KIND				(uint32_t) 0x2
+#define WIN32_STRAIGHT						(uint32_t) 0x3
+#define WIN32_FLUSH							(uint32_t) 0x4
+#define WIN32_FULL_HOUSE					(uint32_t) 0x5
+#define WIN32_FOUR_OF_A_KIND				(uint32_t) 0x6
+#define WIN32_STRAIGHT_FLUSH				(uint32_t) 0x7
+
+// 32-Bit => 0x CF SP Th hh
+
+#define WIN32_SET_HIGH_CARDS(_CARD_VALUE)			(uint32_t) _CARD_VALUE << (0 << 2)
+#define WIN32_SET_SECOND_PAIR(_CARD_VALUE)		(uint32_t) _CARD_VALUE << (3 << 2)
+#define WIN32_SET_FIRST_PAIR(_CARD_VALUE)			(uint32_t) _CARD_VALUE << (4 << 2)
+#define WIN32_SET_THREE_OF_KIND(_CARD_VALUE)		(uint32_t) _CARD_VALUE << (5 << 2)
+#define WIN32_SET_FOUR_OF_KIND(_CARD_VALUE)		(uint32_t) _CARD_VALUE << (6 << 2)
+
+
+
+
+
+#endif /* CARDSDEF_H_ */

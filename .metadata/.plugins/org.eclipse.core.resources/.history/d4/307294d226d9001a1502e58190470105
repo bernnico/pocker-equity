@@ -1,0 +1,22 @@
+/*
+ * cardsdef.h
+ *
+ *  Created on: 08.08.2020
+ *      Author: bernnico
+ */
+
+#ifndef CARDSDEF_H_
+#define CARDSDEF_H_
+
+/* Cards as 64-Bits */
+#define CARD_64_2	(uint64_t) 0x01
+#define CARD_64_A	CARD_64_2 << (13 << 2)
+
+#define CARD_64_2s	(uint64_t) 0x0F
+#define CARD_64_As	CARD_64_2s << (13 << 2)
+
+
+
+
+
+#endif /* CARDSDEF_H_ */

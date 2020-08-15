@@ -1,0 +1,54 @@
+/*
+ * cardsdef.h
+ *
+ *  Created on: 08.08.2020
+ *      Author: bernnico
+ */
+
+#ifndef CARDSDEF_H_
+#define CARDSDEF_H_
+
+#define RANKS				13
+#define SUITS				4
+
+/* Cards as 64-Bits */
+// 64-bit => 0x 0A KQJT 9876 5432
+// LS 4-bit => 0b cdhs
+
+#define CARD_64_2							(uint64_t) 0x1
+#define CARD_64_A							CARD_64_2 << (13 << 2)
+
+#define CARD_64_2s							(uint64_t) 0xF
+#define CARD_64_As							CARD_64_2s << (13 << 2)
+
+#define ALL_S_SUIT_CARDS					(uint64) 0x01 0101 0101 0101 0101 0101 0101
+#define ALL_H_SUIT_CARDS					ALL_S_SUIT_CARDS << 1
+#define ALL_D_SUIT_CARDS					ALL_S_SUIT_CARDS << 2
+#define ALL_C_SUIT_CARDS					ALL_S_SUIT_CARDS << 3
+
+#define ALL_2_RANKS_CARDS					(uint64_t) 0xF
+#define ALL_X_RANKS_CARD(_CARD)				ALL_2_RANKS_CARDS << (_CARD << 2) // rank 2 := _CARD=0
+
+/* Hand as 32-Bit */
+#define PAIR								(uint32_t) 0x0
+#define TWO_PAIR							(uint32_t) 0x1
+#define THREE_OF_A_KIND						(uint32_t) 0x2
+#define STRAIGHT							(uint32_t) 0x3
+#define FLUSH								(uint32_t) 0x4
+#define FULL_HOUSE							(uint32_t) 0x5
+#define FOUR_OF_A_KIND						(uint32_t) 0x6
+#define STRAIGHT_FLUSH						(uint32_t) 0x7
+
+// 32-Bit => 0x CF SP Th hh
+
+#define SET_HIGH_CARDS(_CARD_VALUE)			(uint32_t) _CARD_VALUE << (0 << 2)
+#define SET_SECOND_PAIR(_CARD_VALUE)		(uint32_t) _CARD_VALUE << (3 << 2)
+#define SET_FIRST_PAIR(_CARD_VALUE)			(uint32_t) _CARD_VALUE << (4 << 2)
+#define SET_THREE_OF_KIND(_CARD_VALUE)		(uint32_t) _CARD_VALUE << (5 << 2)
+#define SET_FOUR_OF_KIND(_CARD_VALUE)		(uint32_t) _CARD_VALUE << (6 << 2)
+
+
+
+
+
+#endif /* CARDSDEF_H_ */

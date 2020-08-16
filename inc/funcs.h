@@ -1,9 +1,12 @@
 #ifndef FUNC_H_
 #define FUNC_H_
 
-#include "cardsdef.h"
+#include <time.h>
+#include <stdlib.h>
 
-uint64_t getRandomCards(uint8_t numbersOfCards, uint64_t cardsInGame);
+#include "card64.h"
+
+uint64_t getRandomCards64(uint8_t numbersOfCards, uint64_t cardsInGame);
 
 void getPosibleBoards(uint64_t * boards, uint64_t cardsInGame);
 

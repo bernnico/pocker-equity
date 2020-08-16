@@ -1,5 +1,7 @@
 #include "interpreter.h"
 
+
+
 card64_t getCard64FromString(const char * _card, uint8_t _amount) {
 	if (_amount < 1 || _amount > 52 || *(_card + 2*_amount) != 0) return 0;
 

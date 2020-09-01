@@ -19,38 +19,35 @@
 #define RANK_A				12
 
 #define SUITS				4
-#define SUIT_S				0
-#define SUIT_H				1
-#define SUIT_D				2
-#define SUIT_C				3
+#define SUIT_C				0	// Clubs
+#define SUIT_D				1	// Diamonds
+#define SUIT_H				2	// Heart
+#define SUIT_S				3	// Spades
 
 extern char rank[RANKS];
 extern char suit[SUITS];
 
 typedef uint64_t card64_t;
 
-typedef union {
-	uint8_t card_value[2];
-	uint16_t return_value;
-} cardS2_t;
+#define ADD_CARD64(_SET, _CARD)						_SET |= _CARD
 
 // Cards data type
-#define CARD64_2s									0x01ULL
-#define CARD64_As									(CARD64_2s << (RANK_A * SUITS))
-#define CARD64_Ax(_SUIT)							(CARD64_As << _SUIT)
-#define CARD64_Xs(_RANK)							(CARD64_2s << (_RANK * SUITS)) // rank 2 := _CARD=0
-#define CARD64_Xx(_RANK, _SUIT)						(CARD64_2s << (_RANK * SUITS) << _SUIT)
+#define CARD64_2c									0x01ULL
+#define CARD64_Ac									(CARD64_2c << (RANK_A * SUITS))
+#define CARD64_Ax(_SUIT)							(CARD64_Ac << _SUIT)
+#define CARD64_Xc(_RANK)							(CARD64_2c << (_RANK * SUITS)) // rank 2 := _CARD=0
+#define CARD64_Xx(_RANK, _SUIT)						(CARD64_2c << (_RANK * SUITS) << _SUIT)
 
 // All cards of same rank type
 #define CARD64_2_MASK								0x0FULL
-#define CARD64_A_MASK								(CARD64_MASK_2 << (RANK_A * SUITS))
-#define CARD64_X_MASK(_RANK)						(CARD64_MASK_2 << (_RANK * SUITS))
+#define CARD64_A_MASK								(CARD64_2_MASK << (RANK_A * SUITS))
+#define CARD64_X_MASK(_RANK)						(CARD64_2_MASK << (_RANK * SUITS))
 
 // All cards of same suit type
-#define CARD64_S_MASK								0x01010101010101010101010101ULL
-#define CARD64_H_MASK								CARD64_ALL_S_SUIT << 1
-#define CARD64_D_MASK								CARD64_ALL_S_SUIT << 2
-#define CARD64_C_MASK								CARD64_ALL_S_SUIT << 3
+#define CARD64_C_MASK								0x01111111111111ULL
+#define CARD64_D_MASK								(CARD64_C_MASK << 1)
+#define CARD64_H_MASK								(CARD64_C_MASK << 2)
+#define CARD64_S_MASK								(CARD64_C_MASK << 3)
 
 
 /* ********************************************************************************************************* */

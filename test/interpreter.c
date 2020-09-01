@@ -1,7 +1,5 @@
 #include "interpreter.h"
 
-
-
 card64_t getCard64FromString(const char * _card, uint8_t _amount) {
 	if (_amount < 1 || _amount > 52 || *(_card + 2*_amount) != 0) return 0;
 
@@ -12,7 +10,7 @@ card64_t getCard64FromString(const char * _card, uint8_t _amount) {
 	while (*_card != 0) {
 		for ( i = 0; i < RANKS; i++ ) {
 			if (*_card == rank[i]) {
-				temp = CARD64_Xs(i);
+				temp = CARD64_Xc(i);
 				break;
 			}
 		}
